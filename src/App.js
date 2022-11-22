@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
+import { useState } from "react";
+import $ from "jquery";
 
 import Button from "./Components/Button/Button";
 import "./Main.css";
@@ -13,7 +15,6 @@ import "./Main.css";
 // https://passwordinator.herokuapp.com/?num=true&char=true&caps=true&len=18
 
 function App() {
-	const [estado, setEstado] = useState("no se a generado");
 	const [elvalue, setElvalue] = useState();
 
 	const generarClaveIF = (parametro) => {
@@ -24,16 +25,6 @@ function App() {
 		} else {
 			console.log(`NO existe -> ${cantidad}`);
 		}
-		/*
-		const api = "https://passwordinator.herokuapp.com/?num=true&char=true&caps=true&len=18";
-		Promise.all([
-			fetch( api ).then((value) => value.json())
-		])
-			.then((value) => {
-				const clave = value[0].data;
-				console.log( clave );
-			});
-		*/
 	};
 
 	const generarClave = () => {
@@ -47,22 +38,24 @@ function App() {
 			});
 	};
 
+	const test = () => {
+		// const pizza = document.querySelectorAll(".algo").value;
+		const pizza = $(".algo").is(":checked");
+		console.log(pizza);
+	};
+	/*
 	useEffect(() => {
 		generarClave();
-	}, []);
+	}, [generarClave]);
+	*/
 
 	return (
 		<div className="App">
 			<header className="App-header">
-				<p>
-					Edit
-					<code>src/App.js</code>
-					and save to reload.
-				</p>
-
 				<input type="text" onChange={generarClaveIF} placeholder="Aca aparecera la contraseña" />
 				<h2>{elvalue}</h2>
-				<Button texto="Generar" onClick={generarClave} isotipo />
+				<input className="algo" type="checkbox" />
+				<Button texto="Generar" onClick={test} isotipo />
 			</header>
 		</div>
 	);
