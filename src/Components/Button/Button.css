@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+
+.Buttonjs {
+	color: white;
+	height: 40px;
+	cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	width: 140px;
+	align-items: center;
+	border: 2px solid #c31630;
+	border-radius: 10rem;
+	padding: 1.2rem 5rem;
+	background-color: #ed2c49;
+	font-family: Barlow, sans-serif;
+	font-style: italic;
+	font-weight: 700;
+	letter-spacing: 0.1rem;
+	line-height: 1.2;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition:    all 0.2s ease-out;
+	-o-transition:      all 0.2s ease-out;
+	transition:         all 0.2s ease-out;
+}
+.Buttonjs:hover {
+	background: #c31630;
+}
+.Buttonjs > * {
+	margin: 0 7px;
+}
+.Buttonjs > p {
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 0.05em;
+}
+.Buttonjs > img {
+	width: 60px;
+	height: 20px;
+	display: block;
+}
