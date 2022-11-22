@@ -1,4 +1,3 @@
-// import { useEffect, useState } from "react";
 import { useState } from "react";
 import $ from "jquery";
 
@@ -19,7 +18,7 @@ function App() {
 
 	const generarClaveIF = (parametro) => {
 		setElvalue(parametro.target.value);
-		const cantidad = elvalue.length;
+		const cantidad = String(elvalue).length;
 		if ( elvalue ) {
 			console.log(`SI existe -> ${cantidad}`);
 		} else {
@@ -43,18 +42,18 @@ function App() {
 		const pizza = $(".algo").is(":checked");
 		console.log(pizza);
 	};
-	/*
-	useEffect(() => {
-		generarClave();
-	}, [generarClave]);
-	*/
 
 	return (
 		<div className="App">
 			<header className="App-header">
 				<input type="text" onChange={generarClaveIF} placeholder="Aca aparecera la contraseña" />
 				<h2>{elvalue}</h2>
-				<input className="algo" type="checkbox" />
+				<label htmlFor="num">
+					Numeros
+					<input id="num" className="num" type="checkbox" />
+				</label>
+				<input className="char" type="checkbox" />
+				<input className="caps" type="checkbox" />
 				<Button texto="Generar" onClick={test} isotipo />
 			</header>
 		</div>
