@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
 
 .Buttonjs {
+	margin-top: 40px;
 	color: white;
 	height: 40px;
 	cursor: pointer;
@@ -27,6 +28,9 @@
 .Buttonjs:hover {
 	background: #c31630;
 }
+.Buttonjs:hover > p {
+	margin: 0 10px;
+}
 .Buttonjs > * {
 	margin: 0 7px;
 }
@@ -34,6 +38,10 @@
 	text-transform: uppercase;
 	font-weight: 600;
 	letter-spacing: 0.05em;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition:    all 0.2s ease-out;
+	-o-transition:      all 0.2s ease-out;
+	transition:         all 0.2s ease-out;
 }
 .Buttonjs > img {
 	width: 60px;
