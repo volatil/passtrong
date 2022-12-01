@@ -104,6 +104,12 @@ function App() {
 		}
 	};
 	*/
+
+	const eselrangoMaximo = () => {
+		const elrango = $("#range").val();
+		setRangoMaximo(elrango);
+	};
+
 	const verificarRestricciones = () => {
 		const todo = [];
 		$.each($(".restricciones > label"), function () {
@@ -135,11 +141,6 @@ function App() {
 			}
 		});
 		console.log(todo);
-	};
-
-	const eselrangoMaximo = () => {
-		const elrango = $("#range").val();
-		setRangoMaximo(elrango);
 	};
 
 	useEffect(() => {
