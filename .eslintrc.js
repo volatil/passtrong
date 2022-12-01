@@ -43,5 +43,6 @@ module.exports = {
 		"react/react-in-jsx-scope": "off",
 		"comma-dangle": 0,
 		"react/prop-types": 0,
+		// "max-len": "off", // Ignora las lineas de codigo muy largas, pasa mucho en los arrays
 	},
 };

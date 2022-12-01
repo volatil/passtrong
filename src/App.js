@@ -15,21 +15,7 @@ import "./Main.css";
 
 function App() {
 	const [rangoMaximo, setRangoMaximo] = useState();
-
-	const generarClave = ( restriccion ) => {
-		const num = "&num=true";
-		const char = "&char=true";
-		const caps = "&caps=true";
-		const api = `https://passwordinator.herokuapp.com/${num}${char}${caps}&len=18`;
-		Promise.all([
-			fetch( api ).then((value) => value.json())
-		])
-			.then((value) => {
-				const clave = value[0].data;
-				console.log( `Password => ${clave}` );
-			});
-	};
-
+	/*
 	const verificarRestricciones = () => {
 		const rango = $(".range").val();
 		const numeros = function () {
@@ -48,8 +34,64 @@ function App() {
 			const elsimbolos = $("label[for=simbolos] input").is(":checked");
 			return elsimbolos;
 		};
-		const arrayMayusculas = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-		const arrayMinusculas = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+		const arrayMayusculas = [
+			"A",
+			"B",
+			"C",
+			"D",
+			"E",
+			"F",
+			"G",
+			"H",
+			"I",
+			"J",
+			"K",
+			"L",
+			"M",
+			"N",
+			"Ñ",
+			"O",
+			"P",
+			"Q",
+			"R",
+			"S",
+			"T",
+			"U",
+			"V",
+			"W",
+			"X",
+			"Y",
+			"Z",
+		];
+		const arrayMinusculas = [
+			"a",
+			"b",
+			"c",
+			"d",
+			"e",
+			"f",
+			"g",
+			"h",
+			"i",
+			"j",
+			"k",
+			"l",
+			"m",
+			"n",
+			"ñ",
+			"o",
+			"p",
+			"q",
+			"r",
+			"s",
+			"t",
+			"u",
+			"v",
+			"w",
+			"x",
+			"y",
+			"z",
+		];
 		const arrayNumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 		const arraySimbolos = ["?", "¿", "!", "¡", "#", "$", "%", "&", "/", "(", ")", "=", "-", "_"];
 
@@ -60,10 +102,39 @@ function App() {
 		} else {
 			console.log("NO SON TRUUU!");
 		}
-		// const mix = [...arrayMayusculas, ...arrayMinusculas, ...arrayNumeros, ...arraySimbolos];
-
-		// const url = `https://passwordinator.herokuapp.com/?num=${num()}&char=${char()}&caps=${caps()}&len=${rango}`;
-		// console.log( `URL -> ${url}` );
+	};
+	*/
+	const verificarRestricciones = () => {
+		const todo = [];
+		$.each($(".restricciones > label"), function () {
+			const elarray = {
+				numeros: ["01", "12", "2022"],
+				minusculas: ["m", "in", "usculas"],
+				mayusculas: ["mayus", "cu", "las"],
+				simbolos: ["sim", "bo", "lo", "s"],
+			};
+			const elinput = {
+				nombre: $(this).attr("for"),
+				type: $(this).find("input").attr("type"),
+				value: $(this).find("input").is(":checked"),
+			};
+			if ( elinput.type === "checkbox" ) {
+				if ( elinput.value ) {
+					console.log( `
+						Nombre: ${elinput.nombre}
+						Valor: ${elinput.value}
+					` );
+					todo.push(...elarray[elinput.nombre]);
+				}
+			} else {
+				const rango = $(this).find("input").val();
+				console.log( `
+					Nombre: ${elinput.nombre}
+					Valor: ${rango}
+				` );
+			}
+		});
+		console.log(todo);
 	};
 
 	const eselrangoMaximo = () => {
@@ -79,7 +150,7 @@ function App() {
 		<div className="App">
 			<header className="App-header">
 				<section>
-					<input className="algo" type="text" placeholder="Aca aparecera la contraseña" />
+					<input className="algo" type="text" placeholder="Password" />
 					<div className="restricciones">
 						<label htmlFor="range">
 							Rango (
@@ -92,15 +163,15 @@ function App() {
 							<input id="numeros" className="numeros" type="checkbox" />
 						</label>
 						<label htmlFor="minusculas">
-							minusculas
+							Minusculas
 							<input id="minusculas" className="minusculas" type="checkbox" />
 						</label>
 						<label htmlFor="mayusculas">
-							mayusculas
+							Mayusculas
 							<input id="mayusculas" className="mayusculas" type="checkbox" />
 						</label>
 						<label htmlFor="simbolos">
-							simbolos
+							Simbolos
 							<input id="simbolos" className="simbolos" type="checkbox" />
 						</label>
 					</div>
