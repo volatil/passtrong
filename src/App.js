@@ -112,12 +112,95 @@ function App() {
 
 	const verificarRestricciones = () => {
 		const todo = [];
+		let rango = "";
 		$.each($(".restricciones > label"), function () {
-			const elarray = {
-				numeros: ["01", "12", "2022"],
-				minusculas: ["m", "in", "usculas"],
-				mayusculas: ["mayus", "cu", "las"],
-				simbolos: ["sim", "bo", "lo", "s"],
+			const losarray = {
+				numeros: [
+					1,
+					2,
+					3,
+					4,
+					5,
+					6,
+					7,
+					8,
+					9,
+					0,
+				],
+				minusculas: [
+					"a",
+					"b",
+					"c",
+					"d",
+					"e",
+					"f",
+					"g",
+					"h",
+					"i",
+					"j",
+					"k",
+					"l",
+					"m",
+					"n",
+					"ñ",
+					"o",
+					"p",
+					"q",
+					"r",
+					"s",
+					"t",
+					"u",
+					"v",
+					"w",
+					"x",
+					"y",
+					"z",
+				],
+				mayusculas: [
+					"A",
+					"B",
+					"C",
+					"D",
+					"E",
+					"F",
+					"G",
+					"H",
+					"I",
+					"J",
+					"K",
+					"L",
+					"M",
+					"N",
+					"Ñ",
+					"O",
+					"P",
+					"Q",
+					"R",
+					"S",
+					"T",
+					"U",
+					"V",
+					"W",
+					"X",
+					"Y",
+					"Z",
+				],
+				simbolos: [
+					"?",
+					"¿",
+					"!",
+					"¡",
+					"#",
+					"$",
+					"%",
+					"&",
+					"/",
+					"(",
+					")",
+					"=",
+					"-",
+					"_",
+				],
 			};
 			const elinput = {
 				nombre: $(this).attr("for"),
@@ -126,20 +209,13 @@ function App() {
 			};
 			if ( elinput.type === "checkbox" ) {
 				if ( elinput.value ) {
-					console.log( `
-						Nombre: ${elinput.nombre}
-						Valor: ${elinput.value}
-					` );
-					todo.push(...elarray[elinput.nombre]);
+					todo.push(...losarray[elinput.nombre]);
 				}
 			} else {
-				const rango = $(this).find("input").val();
-				console.log( `
-					Nombre: ${elinput.nombre}
-					Valor: ${rango}
-				` );
+				rango = $(this).find("input").val();
 			}
 		});
+		// console.log(rango);
 		console.log(todo);
 	};
 
