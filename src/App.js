@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import $ from "jquery";
 
-import numeroRandom from "./Helpers/Helpers";
+import { numeroRandom, data, rango } from "./Helpers/Helpers";
 
 import Button from "./Components/Button/Button";
 import "./Main.css";
@@ -16,11 +16,12 @@ import "./Main.css";
 // https://passwordinator.herokuapp.com/?num=true&char=true&caps=true&len=18
 
 function App() {
-	const [rangoMaximo, setRangoMaximo] = useState();
+	const [rangoMinimo, setRangoMinimo] = useState(0);
+	const [rangoMaximo, setRangoMaximo] = useState(20);
 
 	useEffect(() => {
 		numeroRandom(1, 23);
-	});
+	}, []);
 
 	return (
 		<div className="App">
@@ -29,10 +30,9 @@ function App() {
 					<input className="algo" type="text" placeholder="Password" />
 					<div className="restricciones">
 						<label htmlFor="range">
-							Rango (
-							<span>{rangoMaximo}</span>
-							)
-							{/* <input id="range" className="range" type="range" max="20" onChange={eselrangoMaximo} /> */}
+							Rango
+							{ rangoMaximo ? <span>({rangoMaximo})</span> : <span>({rangoMinimo})</span> }
+							<input id="range" className="range" type="range" max="20" onChange={() => { setRangoMaximo(rango); }} />
 						</label>
 						<label htmlFor="numeros">
 							Numeros
@@ -52,6 +52,7 @@ function App() {
 						</label>
 					</div>
 					{/* <Button texto="Generar" onClick={verificarRestricciones} isotipo /> */}
+					<Button texto="Generar" isotipo />
 				</section>
 			</header>
 		</div>
