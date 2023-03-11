@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
-import $ from "jquery";
+import { useState } from "react";
 
-import { numeroRandom, data, rango } from "./Helpers/Helpers";
+import {
+	rango,
+	verificarRestricciones,
+} from "./Helpers/Helpers";
 
 import Button from "./Components/Button/Button";
 import "./Main.css";
@@ -18,41 +20,39 @@ import "./Main.css";
 function App() {
 	const [rangoMinimo, setRangoMinimo] = useState(0);
 	const [rangoMaximo, setRangoMaximo] = useState(20);
-
-	useEffect(() => {
-		numeroRandom(1, 23);
-	}, []);
+	const [clavegenerada, setclavegenerada] = useState();
 
 	return (
 		<div className="App">
 			<header className="App-header">
 				<section>
-					<input className="algo" type="text" placeholder="Password" />
+					<input className="algo" type="text" placeholder="Password" defaultValue={clavegenerada} />
 					<div className="restricciones">
 						<label htmlFor="range">
 							Rango
 							{ rangoMaximo ? <span>({rangoMaximo})</span> : <span>({rangoMinimo})</span> }
 							<input id="range" className="range" type="range" max="20" onChange={() => { setRangoMaximo(rango); }} />
 						</label>
-						<label htmlFor="numeros">
-							Numeros
-							<input id="numeros" className="numeros" type="checkbox" />
-						</label>
-						<label htmlFor="minusculas">
-							Minusculas
-							<input id="minusculas" className="minusculas" type="checkbox" />
-						</label>
-						<label htmlFor="mayusculas">
-							Mayusculas
-							<input id="mayusculas" className="mayusculas" type="checkbox" />
-						</label>
-						<label htmlFor="simbolos">
-							Simbolos
-							<input id="simbolos" className="simbolos" type="checkbox" />
-						</label>
+						<div>
+							<label htmlFor="numeros">
+								Numeros
+								<input id="numeros" className="numeros" type="checkbox" />
+							</label>
+							<label htmlFor="minusculas">
+								Minusculas
+								<input id="minusculas" className="minusculas" type="checkbox" />
+							</label>
+							<label htmlFor="mayusculas">
+								Mayusculas
+								<input id="mayusculas" className="mayusculas" type="checkbox" />
+							</label>
+							<label htmlFor="simbolos">
+								Simbolos
+								<input id="simbolos" className="simbolos" type="checkbox" />
+							</label>
+						</div>
 					</div>
-					{/* <Button texto="Generar" onClick={verificarRestricciones} isotipo /> */}
-					<Button texto="Generar" isotipo />
+					<Button texto="Generar" onClick={() => { setclavegenerada(verificarRestricciones); }} isotipo />
 				</section>
 			</header>
 		</div>

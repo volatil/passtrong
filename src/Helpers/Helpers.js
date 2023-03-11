@@ -17,3 +17,35 @@ export function rango() {
 	// console.debug( elrango );
 	return Number(elrango);
 }
+
+export function verificarRestricciones() {
+	const requisitos = [];
+	$.each( $(".restricciones > div > label"), function () {
+		const prop = $(this).find("input[type=checkbox]").attr("class");
+		const isChecked = $(this).find("input[type=checkbox]").is(":checked");
+		if ( isChecked ) {
+			requisitos.push( prop );
+		}
+	});
+
+	const seleccionadosPorElUsuario = requisitos;
+	const cantidadCaracteres = rango();
+
+	console.debug( seleccionadosPorElUsuario, cantidadCaracteres );
+
+	const unionSeleccionados = [];
+	for ( let count = 0; count <= seleccionadosPorElUsuario.length - 1; count++ ) {
+		unionSeleccionados.push( ...new Set( data[seleccionadosPorElUsuario[count]] ) );
+	}
+	console.debug( unionSeleccionados );
+
+	const password = [];
+	for ( let count = 0; count <= cantidadCaracteres - 1; count++ ) {
+		const letra = unionSeleccionados[numeroRandom(1, unionSeleccionados.length - 1)];
+		password.push( letra );
+	}
+
+	const clave = String(password.join()).replaceAll(",", "");
+	console.debug( `CLAVE: ${clave}` );
+	return clave;
+}
