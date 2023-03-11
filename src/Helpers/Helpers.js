@@ -1,7 +1,6 @@
 import $ from "jquery";
 
 export function numeroRandom(min, max) {
-	// console.debug( `-> ${Math.floor(Math.random() * (max - min + 1) + min)}` );
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
@@ -14,7 +13,6 @@ export const data = {
 
 export function rango() {
 	const elrango = $("#range").val();
-	// console.debug( elrango );
 	return Number(elrango);
 }
 
@@ -31,13 +29,10 @@ export function verificarRestricciones() {
 	const seleccionadosPorElUsuario = requisitos;
 	const cantidadCaracteres = rango();
 
-	console.debug( seleccionadosPorElUsuario, cantidadCaracteres );
-
 	const unionSeleccionados = [];
 	for ( let count = 0; count <= seleccionadosPorElUsuario.length - 1; count++ ) {
 		unionSeleccionados.push( ...new Set( data[seleccionadosPorElUsuario[count]] ) );
 	}
-	console.debug( unionSeleccionados );
 
 	const password = [];
 	for ( let count = 0; count <= cantidadCaracteres - 1; count++ ) {
@@ -46,6 +41,5 @@ export function verificarRestricciones() {
 	}
 
 	const clave = String(password.join()).replaceAll(",", "");
-	console.debug( `CLAVE: ${clave}` );
 	return clave;
 }
