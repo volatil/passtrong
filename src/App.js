@@ -3,9 +3,11 @@ import { useState } from "react";
 import {
 	rango,
 	verificarRestricciones,
+	copiarPortapapeles,
 } from "./Helpers/Helpers";
 
 import Button from "./Components/Button/Button";
+import copiar from "./assets/svg/copiar.svg";
 import "./Main.css";
 
 // NUMEROS
@@ -26,7 +28,16 @@ function App() {
 		<div className="App">
 			<header className="App-header">
 				<section>
-					<input className="algo" type="text" placeholder="Password" defaultValue={clavegenerada} />
+					<div className="passwordGenerada">
+						<input className="password" type="text" placeholder="Password" defaultValue={clavegenerada} disabled />
+						<input className="eloculto" type="text" placeholder="Password" defaultValue={clavegenerada} />
+						{/* <div>
+							<img src={copiar} alt="copiar en el portapapeles" onClick={copiarPortapapeles} />
+						</div> */}
+						<button type="button" onClick={copiarPortapapeles}>
+							<img src={copiar} alt="copiar en el portapapeles" />
+						</button>
+					</div>
 					<div className="restricciones">
 						<label htmlFor="range">
 							Rango

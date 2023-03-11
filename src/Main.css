@@ -25,6 +25,10 @@ code {
 	align-items: center;
 	justify-content: center;
 }
+section {
+	overflow: hidden;
+	position: relative;
+}
 .restricciones ,
 .restricciones > div {
 	display: flex;
@@ -34,8 +38,24 @@ code {
 .restricciones > label[for="range"] > span {
 	font-size: .8em;
 }
-input.algo {
+section .passwordGenerada {
 	margin-bottom: 20px;
+	display: flex;
+}
+section .passwordGenerada input.password {
 	height: 40px;
 	padding: 6px 10px;
+}
+section .passwordGenerada input.eloculto {
+	position: absolute;
+	left: -9999px;
+}
+section .passwordGenerada button {
+	background: none;
+	border: none;
+}
+section .passwordGenerada button img {
+	width: 30px;
+	margin-left: 10px;
+	cursor: pointer;
 }
