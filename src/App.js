@@ -10,15 +10,6 @@ import Button from "./Components/Button/Button";
 import copiar from "./assets/svg/copiar.svg";
 import "./Main.css";
 
-// NUMEROS
-// https://makemeapassword.ligos.net/api/v1/pin/json?c=10&l=6
-// NUMEROS Y LETRAS
-// https://makemeapassword.ligos.net/api/v1/alphanumeric/json?c=10&l=12
-// "num" = numeros
-// "char" = caracteres
-// "caps" = mayusculas
-// https://passwordinator.herokuapp.com/?num=true&char=true&caps=true&len=18
-
 function App() {
 	const [rangoMinimo, setRangoMinimo] = useState(0);
 	const [rangoMaximo, setRangoMaximo] = useState(20);
@@ -31,9 +22,6 @@ function App() {
 					<div className="passwordGenerada">
 						<input className="password" type="text" placeholder="Password" defaultValue={clavegenerada} disabled />
 						<input className="eloculto" type="text" placeholder="Password" defaultValue={clavegenerada} />
-						{/* <div>
-							<img src={copiar} alt="copiar en el portapapeles" onClick={copiarPortapapeles} />
-						</div> */}
 						<button type="button" onClick={copiarPortapapeles}>
 							<img src={copiar} alt="copiar en el portapapeles" />
 						</button>
