@@ -45,10 +45,8 @@ export function verificarRestricciones() {
 }
 
 export function copiarPortapapeles() {
-	console.debug( "copiado 1" );
 	const textoACopiar = $("section .passwordGenerada input.eloculto");
 	textoACopiar.focus();
 	textoACopiar.select();
 	document.execCommand("copy");
-	console.debug( "copiado 2" );
 }
