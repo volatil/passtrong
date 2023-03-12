@@ -1,3 +1,7 @@
+:root {
+	--negro: #272626;
+	--aprobado: #2da44e;
+}
 body {
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -26,7 +30,7 @@ code {
 	justify-content: center;
 }
 section {
-	overflow: hidden;
+	/* overflow: hidden; */
 	position: relative;
 }
 .restricciones ,
@@ -57,9 +61,47 @@ section .passwordGenerada input.eloculto {
 section .passwordGenerada button {
 	background: none;
 	border: none;
+	position: relative;
 }
 section .passwordGenerada button img {
 	width: 30px;
 	margin-left: 10px;
 	cursor: pointer;
+}
+section .passwordGenerada button .tooltip {
+	background: var(--negro);
+	color: white;
+	position: absolute;
+	width: 100px;
+	top: 10px;
+	right: -130px;
+	padding: 10px;
+	border-radius: 6px;
+}
+section .passwordGenerada button .tooltip .triangulo {
+	width: 0px;
+	height: 0px;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-right: 10px solid var(--negro);
+	margin: 0 0 15px 0;
+	position: absolute;
+	left: -10px;
+	top: 8px;
+}
+section .passwordGenerada button .tooltip.copiar {
+	display: none;
+	width: 100px;
+}
+section .passwordGenerada button:hover .tooltip.copiar {
+	display: block;
+}
+section .passwordGenerada button .tooltip.copiado {
+	display: none;
+	background-color: var(--aprobado);
+	width: 70px;
+	right: -100px;
+}
+section .passwordGenerada button .tooltip.copiado .triangulo {
+	border-right: 10px solid var(--aprobado);
 }

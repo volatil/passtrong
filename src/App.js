@@ -10,9 +10,17 @@ import Button from "./Components/Button/Button";
 import copiar from "./assets/svg/copiar.svg";
 import "./Main.css";
 
+function Tooltip({ clase, mensaje }) {
+	return (
+		<div className={`tooltip ${clase}`}>
+			<span className="triangulo" />
+			<span className="mensaje">{ mensaje }</span>
+		</div>
+	);
+}
+
 function App() {
-	const [rangoMinimo, setRangoMinimo] = useState(0);
-	const [rangoMaximo, setRangoMaximo] = useState(20);
+	const [rangoMaximo, setRangoMaximo] = useState(16);
 	const [clavegenerada, setclavegenerada] = useState();
 
 	return (
@@ -24,13 +32,15 @@ function App() {
 						<input className="eloculto" type="text" placeholder="Password" defaultValue={clavegenerada} />
 						<button type="button" onClick={copiarPortapapeles}>
 							<img src={copiar} alt="copiar en el portapapeles" />
+							<Tooltip clase="copiar" mensaje="Click para copiar" />
+							<Tooltip clase="copiado" mensaje="Copiado !" />
 						</button>
 					</div>
 					<div className="restricciones">
 						<label htmlFor="range">
 							Rango
-							{ rangoMaximo ? <span>({rangoMaximo})</span> : <span>({rangoMinimo})</span> }
-							<input id="range" className="range" type="range" max="20" onChange={() => { setRangoMaximo(rango); }} />
+							{ rangoMaximo ? <span>({rangoMaximo})</span> : <span>(0)</span> }
+							<input id="range" className="range" type="range" max="20" defaultValue="16" onChange={() => { setRangoMaximo(rango); }} />
 						</label>
 						<div className="requisitos">
 							<label htmlFor="numeros">

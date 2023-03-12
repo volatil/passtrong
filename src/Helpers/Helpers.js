@@ -49,4 +49,8 @@ export function copiarPortapapeles() {
 	textoACopiar.focus();
 	textoACopiar.select();
 	document.execCommand("copy");
+	$(".tooltip.copiado").show();
+	setTimeout(() => {
+		$(".tooltip.copiado").fadeOut();
+	}, 3000);
 }
