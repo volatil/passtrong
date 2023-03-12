@@ -32,7 +32,7 @@ function App() {
 							{ rangoMaximo ? <span>({rangoMaximo})</span> : <span>({rangoMinimo})</span> }
 							<input id="range" className="range" type="range" max="20" onChange={() => { setRangoMaximo(rango); }} />
 						</label>
-						<div>
+						<div className="requisitos">
 							<label htmlFor="numeros">
 								Numeros
 								<input id="numeros" className="numeros" type="checkbox" />
