@@ -56,6 +56,8 @@ section#passtrong > aside .bloque {
 }
 section#passtrong > aside .passwordGenerada {
 	margin-bottom: 20px;
+	position: relative;
+	overflow: hidden;
 }
 section#passtrong > aside .passwordGenerada input.password {
 	height: 40px;
