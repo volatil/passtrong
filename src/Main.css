@@ -1,36 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 :root {
-	--negro: #272626;
-	--aprobado: #2da44e;
+	--negro: #131218;
+	--gris: #24232b;
+	--cyan: #25ebcd;
+	--amarillo: #f8ce60;
+	--tooltip: #333;
 }
 body {
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-color: #282c34;
-	background-color: #0e0e0e;
+	background-color: var( --negro );
+}
+
+#root {
+	display: flex;
+	justify-content: center;
 }
 section#passtrong {
-	min-height: 100vh;
 	font-size: calc(10px + 2vmin);
 	color: white;
-	border: 1px solid #010508;
 	padding: 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	position: relative;
 	margin-top: 60px;
-	background-color: #24232b;
+	width: 410px;
+	padding: 20px 0px;
 }
 section#passtrong header {
 	width: 100%;
 	display: flex;
 }
 section#passtrong header > img {
-	width: 50%;
-	margin: 0 auto;
+	width: 86%;
+	margin: 0 auto 20px;
 }
+section#passtrong > aside {
+	width: 100%;
+}
+section#passtrong > aside .bloque {
+	background-color: var( --gris );
+	margin-bottom: 20px;
+	padding: 0px 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+section#passtrong > aside .passwordGenerada input.password {
+	height: 40px;
+	width: 100%;
+	padding: 6px 10px;
+	background-color: transparent;
+	font-family: 'Roboto', sans-serif;
+	color: white;
+	font-size: .76em;
+	border: none;
+}
+section#passtrong > aside .passwordGenerada input.eloculto {
+	position: absolute;
+	left: -9999px;
+}
+section#passtrong > aside .passwordGenerada button {
+	background: none;
+	border: none;
+	position: relative;
+}
+section#passtrong > aside .passwordGenerada button img {
+	width: 30px;
+	margin-left: 10px;
+	cursor: pointer;
+}
+section#passtrong > aside .passwordGenerada button .tooltip {
+	background: var(--tooltip);
+	color: white;
+	position: absolute;
+	width: 100px;
+	top: 0px;
+	right: -130px;
+	padding: 10px;
+	border-radius: 6px;
+}
+section#passtrong > aside .passwordGenerada button .tooltip .triangulo {
+	width: 0px;
+	height: 0px;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-right: 10px solid var(--tooltip);
+	margin: 0 0 15px 0;
+	position: absolute;
+	left: -10px;
+	top: 8px;
+}
+section#passtrong > aside .passwordGenerada button .tooltip.copiar {
+	display: none;
+	width: 100px;
+}
+section#passtrong > aside .passwordGenerada button:hover .tooltip.copiar {
+	display: block;
+}
+section#passtrong > aside .passwordGenerada button .tooltip.copiado {
+	display: none;
+	background-color: var(--cyan);
+	color: var( --negro );
+	width: 70px;
+	right: -100px;
+}
+section#passtrong > aside .passwordGenerada button .tooltip.copiado .triangulo {
+	border-right: 10px solid var(--cyan);
+}
+section#passtrong > aside .restricciones {
+	display: flex;
+	flex-direction: column;
+}
+section#passtrong > aside .restricciones .rango {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin-bottom: 20px;
+}
+section#passtrong > aside .restricciones .rango > p {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 20px 0 0 0;
+}
+section#passtrong > aside .restricciones .rango > p > span {
+	font-size: 0.7em;
+	letter-spacing: 0.05em;
+}
+section#passtrong > aside .restricciones .rango > p > span.elrangito {
+	color: var( --cyan );
+	font-size: 1em;
+}
+section#passtrong > aside .restricciones .rango > label input {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 1em;
+	font-family: Arial, sans-serif;
+}
+section#passtrong > aside .restricciones .rango > label input[type="range"] {
+	appearance: none;
+	-webkit-appearance: none;
+	margin-right: 15px;
+	width: 100%;
+	height: 7px;
+	background: var(--negro);
+	border-radius: 5px;
+	background-image: linear-gradient(#25ebcd, #25ebcd);
+	background-size: 70% 100%;
+	background-repeat: no-repeat;
+}
+section#passtrong > aside .restricciones .rango > label input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	background: white;
+	cursor: ew-resize;
+	box-shadow: 0 0 2px 0 #555;
+	transition: background .3s ease-in-out;
+}
+section#passtrong > aside .restricciones .rango > label input[type="range"]::-moz-range-thumb {
+	appearance: none;
+	-webkit-appearance: none;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	background: white;
+	cursor: ew-resize;
+	box-shadow: 0 0 2px 0 #555;
+	transition: background .3s ease-in-out;
+}
+section#passtrong > aside .restricciones .rango > label input[type="range"]::-ms-thumb {
+	appearance: none;
+	-webkit-appearance: none;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	background: white;
+	cursor: ew-resize;
+	box-shadow: 0 0 2px 0 #555;
+	transition: background .3s ease-in-out;
+}
+section#passtrong > aside .restricciones .rango > label input[type="range"]::-webkit-slider-thumb:hover {
+	background: #ccc;
+}
+section#passtrong > aside .restricciones .rango > label input[type="range"]::-moz-range-thumb:hover {
+	background: #ccc;
+}
+section#passtrong > aside .restricciones .rango > label input[type="range"]::-ms-thumb:hover {
+	background: #ccc;
+}
+section#passtrong > aside .restricciones .rango > label input[type="range"]::-webkit-slider-runnable-track{
+	-webkit-appearance: none;
+	box-shadow: none;
+	border: none;
+	background: transparent;
+}
+section#passtrong > aside .restricciones .rango > label input[type="range"]::-moz-range-track {
+	appearance: none;
+	-webkit-appearance: none;
+	box-shadow: none;
+	border: none;
+	background: transparent;
+}
+section#passtrong > aside .restricciones .rango > label input[type="range"]::-ms-track {
+	appearance: none;
+	-webkit-appearance: none;
+	box-shadow: none;
+	border: none;
+	background: transparent;
+}
+section#passtrong > aside .restricciones .requisitos {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+section#passtrong > aside .restricciones .requisitos > label {
+}
+/*
 section#passtrong .restricciones ,
 section#passtrong .restricciones > div {
 	display: flex;
@@ -43,63 +235,4 @@ section#passtrong .restricciones > .requisitos > label {
 section#passtrong .restricciones > .requisitos > label[for="range"] > span {
 	font-size: .8em;
 }
-section#passtrong .passwordGenerada {
-	margin-bottom: 20px;
-	display: flex;
-}
-section#passtrong .passwordGenerada input.password {
-	height: 40px;
-	padding: 6px 10px;
-	background-color: white;
-}
-section#passtrong .passwordGenerada input.eloculto {
-	position: absolute;
-	left: -9999px;
-}
-section#passtrong .passwordGenerada button {
-	background: none;
-	border: none;
-	position: relative;
-}
-section#passtrong .passwordGenerada button img {
-	width: 30px;
-	margin-left: 10px;
-	cursor: pointer;
-}
-section#passtrong .passwordGenerada button .tooltip {
-	background: var(--negro);
-	color: white;
-	position: absolute;
-	width: 100px;
-	top: 10px;
-	right: -130px;
-	padding: 10px;
-	border-radius: 6px;
-}
-section#passtrong .passwordGenerada button .tooltip .triangulo {
-	width: 0px;
-	height: 0px;
-	border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent;
-	border-right: 10px solid var(--negro);
-	margin: 0 0 15px 0;
-	position: absolute;
-	left: -10px;
-	top: 8px;
-}
-section#passtrong .passwordGenerada button .tooltip.copiar {
-	display: none;
-	width: 100px;
-}
-section#passtrong .passwordGenerada button:hover .tooltip.copiar {
-	display: block;
-}
-section#passtrong .passwordGenerada button .tooltip.copiado {
-	display: none;
-	background-color: var(--aprobado);
-	width: 70px;
-	right: -100px;
-}
-section#passtrong .passwordGenerada button .tooltip.copiado .triangulo {
-	border-right: 10px solid var(--aprobado);
-}
+*/

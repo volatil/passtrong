@@ -1,5 +1,5 @@
 import "./Button.css";
-import arrow from "./arrowright.svg";
+import arrow from "../../assets/svg/arrowright.svg";
 
 function Button({ isotipo = false, texto = "Mensaje no seteado", onClick } = {}) {
 	return (

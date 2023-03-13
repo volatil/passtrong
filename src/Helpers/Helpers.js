@@ -54,3 +54,12 @@ export function copiarPortapapeles() {
 		$(".tooltip.copiado").fadeOut();
 	}, 3000);
 }
+
+export function rangoUI() {
+	const total = $("section#passtrong > aside .restricciones .rango > label input[type=range]").attr("max");
+	const parte = $("section#passtrong > aside .restricciones .rango > label input[type=range]").val();
+
+	const resul = (parte * 100) / total;
+	const resul2 = parseInt( resul, 10);
+	$("section#passtrong > aside .restricciones .rango > label input[type=range]").css("background-size", `${resul2}% 100%`);
+}

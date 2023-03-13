@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import {
 	rango,
 	verificarRestricciones,
 	copiarPortapapeles,
+	rangoUI,
 } from "./Helpers/Helpers";
 
 import Button from "./Components/Button/Button";
@@ -24,46 +25,56 @@ function App() {
 	const [rangoMaximo, setRangoMaximo] = useState(16);
 	const [clavegenerada, setclavegenerada] = useState();
 
+	useEffect(() => {
+		rangoUI();
+	}, []);
+
 	return (
 		<section id="passtrong">
 			<header>
 				<img src={logo} alt="PASStrong" />
 			</header>
-			<div className="passwordGenerada">
-				<input className="password" type="text" placeholder="Password" defaultValue={clavegenerada} disabled />
-				<input className="eloculto" type="text" placeholder="Password" defaultValue={clavegenerada} />
-				<button type="button" onClick={copiarPortapapeles}>
-					<img src={copiar} alt="copiar en el portapapeles" />
-					<Tooltip clase="copiar" mensaje="Click para copiar" />
-					<Tooltip clase="copiado" mensaje="Copiado !" />
-				</button>
-			</div>
-			<div className="restricciones">
-				<label htmlFor="range">
-					Rango
-					{ rangoMaximo ? <span>({rangoMaximo})</span> : <span>(0)</span> }
-					<input id="range" className="range" type="range" max="20" defaultValue="16" onChange={() => { setRangoMaximo(rango); }} />
-				</label>
-				<div className="requisitos">
-					<label htmlFor="numeros">
-						Numeros
-						<input id="numeros" className="numeros" type="checkbox" />
-					</label>
-					<label htmlFor="minusculas">
-						Minusculas
-						<input id="minusculas" className="minusculas" type="checkbox" />
-					</label>
-					<label htmlFor="mayusculas">
-						Mayusculas
-						<input id="mayusculas" className="mayusculas" type="checkbox" />
-					</label>
-					<label htmlFor="simbolos">
-						Simbolos
-						<input id="simbolos" className="simbolos" type="checkbox" />
-					</label>
+			<aside>
+				<div className="bloque passwordGenerada">
+					<input className="password" type="text" placeholder="..." defaultValue={clavegenerada} disabled />
+					<input className="eloculto" type="text" placeholder="..." defaultValue={clavegenerada} />
+					<button type="button" onClick={copiarPortapapeles}>
+						<img src={copiar} alt="copiar en el portapapeles" />
+						<Tooltip clase="copiar" mensaje="Click para copiar" />
+						<Tooltip clase="copiado" mensaje="Copiado !" />
+					</button>
 				</div>
-			</div>
-			<Button texto="Generar" onClick={() => { setclavegenerada(verificarRestricciones); }} isotipo />
+				<div className="bloque restricciones">
+					<div className="rango">
+						<p>
+							<span>Longitud de Caracteres</span>
+							{ rangoMaximo ? <span className="elrangito">{rangoMaximo}</span> : <span className="elrangito">0</span> }
+						</p>
+						<label htmlFor="range">
+							<input id="range" className="range" type="range" max="20" defaultValue="16" onChange={() => { setRangoMaximo(rango); rangoUI(); }} />
+						</label>
+					</div>
+					<div className="requisitos">
+						<label htmlFor="numeros">
+							<input id="numeros" className="numeros" type="checkbox" />
+							Numeros
+						</label>
+						<label htmlFor="minusculas">
+							<input id="minusculas" className="minusculas" type="checkbox" />
+							Minusculas
+						</label>
+						<label htmlFor="mayusculas">
+							<input id="mayusculas" className="mayusculas" type="checkbox" />
+							Mayusculas
+						</label>
+						<label htmlFor="simbolos">
+							<input id="simbolos" className="simbolos" type="checkbox" />
+							Simbolos
+						</label>
+					</div>
+				</div>
+				<Button texto="Generar Contraseña" onClick={() => { setclavegenerada(verificarRestricciones); }} isotipo />
+			</aside>
 		</section>
 	);
 }
