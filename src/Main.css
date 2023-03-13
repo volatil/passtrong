@@ -9,7 +9,7 @@
 	--baja: #cc153f;
 	--mediabaja: #cc6615;
 	--mediaalta: #f8ce60;
-	--alta: #299a06;
+	--alta: #3ab215;
 }
 body {
 	margin: 0;
@@ -80,44 +80,6 @@ section#passtrong > aside .passwordGenerada button img {
 	width: 30px;
 	margin-left: 10px;
 	cursor: pointer;
-}
-section#passtrong > aside .passwordGenerada button .tooltip {
-	background: var(--tooltip);
-	color: white;
-	position: absolute;
-	width: 100px;
-	top: 0px;
-	right: -130px;
-	padding: 10px;
-	border-radius: 6px;
-}
-section#passtrong > aside .passwordGenerada button .tooltip .triangulo {
-	width: 0px;
-	height: 0px;
-	border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent;
-	border-right: 10px solid var(--tooltip);
-	margin: 0 0 15px 0;
-	position: absolute;
-	left: -10px;
-	top: 8px;
-}
-section#passtrong > aside .passwordGenerada button .tooltip.copiar {
-	display: none;
-	width: 100px;
-}
-section#passtrong > aside .passwordGenerada button:hover .tooltip.copiar {
-	display: block;
-}
-section#passtrong > aside .passwordGenerada button .tooltip.copiado {
-	display: none;
-	background-color: var(--cyan);
-	color: var( --negro );
-	width: 70px;
-	right: -100px;
-}
-section#passtrong > aside .passwordGenerada button .tooltip.copiado .triangulo {
-	border-right: 10px solid var(--cyan);
 }
 section#passtrong > aside .restricciones {
 	display: flex;
@@ -269,17 +231,15 @@ section#passtrong > aside .restricciones .requisitos label .checkmark:after {
 section#passtrong > aside .restricciones .requisitos label input:checked ~ .checkmark:after {
 	display: block;
 }
+section#passtrong > aside .restricciones .requisitos label:hover input ~ .checkmark ,
 section#passtrong > aside .restricciones .requisitos label .checkmark:after {
-	 top: 2px;
+	top: 2px;
 	left: 1px;
 	width: 20px;
 	height: 19px;
 	background-image: url("./assets/svg/check.svg");
 	background-repeat: no-repeat;
 }
-
-
-
 section#passtrong > aside .complejidad {
 	display: flex;
 	justify-content: space-between;

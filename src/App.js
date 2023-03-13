@@ -8,19 +8,12 @@ import {
 	complejidad,
 } from "./Helpers/Helpers";
 
+import Alerta from "./Components/Alerta/Alerta";
 import Button from "./Components/Button/Button";
+
 import logo from "./assets/svg/logo.svg";
 import copiar from "./assets/svg/copiar.svg";
 import "./Main.css";
-
-function Tooltip({ clase, mensaje }) {
-	return (
-		<div className={`tooltip ${clase}`}>
-			<span className="triangulo" />
-			<span className="mensaje">{ mensaje }</span>
-		</div>
-	);
-}
 
 function App() {
 	const [rangoMaximo, setRangoMaximo] = useState(16);
@@ -40,9 +33,8 @@ function App() {
 					<input className="password" type="text" placeholder="..." defaultValue={clavegenerada} disabled />
 					<input className="eloculto" type="text" placeholder="..." defaultValue={clavegenerada} />
 					<button type="button" onClick={copiarPortapapeles}>
+						<Alerta clase="copiado" mensaje="Copiado !" />
 						<img src={copiar} alt="copiar en el portapapeles" />
-						<Tooltip clase="copiar" mensaje="Click para copiar" />
-						<Tooltip clase="copiado" mensaje="Copiado !" />
 					</button>
 				</div>
 				<div className="bloque restricciones">
