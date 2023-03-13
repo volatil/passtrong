@@ -82,7 +82,7 @@ function App() {
 					<div>
 						<p>complejidad</p>
 					</div>
-					<div data-complejidad="vacio" className="simbologia">
+					<div data-complejidad="nivel0" className="simbologia">
 						<span />
 						<span />
 						<span />

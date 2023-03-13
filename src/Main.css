@@ -299,19 +299,19 @@ section#passtrong > aside .complejidad > div.simbologia > span {
 	width: 6px;
 	margin: 0 4px 0 0;
 }
-section#passtrong > aside .complejidad > div.simbologia[data-complejidad=baja] > span.activo {
+section#passtrong > aside .complejidad > div.simbologia[data-complejidad=nivel1] > span.activo {
 	border: 2px solid var(--baja);
 	background-color: var(--baja);
 }
-section#passtrong > aside .complejidad > div.simbologia[data-complejidad=mediabaja] > span.activo {
+section#passtrong > aside .complejidad > div.simbologia[data-complejidad=nivel2] > span.activo {
 	border: 2px solid var(--mediabaja);
 	background-color: var(--mediabaja);
 }
-section#passtrong > aside .complejidad > div.simbologia[data-complejidad=mediaalta] > span.activo {
+section#passtrong > aside .complejidad > div.simbologia[data-complejidad=nivel3] > span.activo {
 	border: 2px solid var(--mediaalta);
 	background-color: var(--mediaalta);
 }
-section#passtrong > aside .complejidad > div.simbologia[data-complejidad=alta] > span.activo {
+section#passtrong > aside .complejidad > div.simbologia[data-complejidad=nivel4] > span.activo {
 	border: 2px solid var(--alta);
 	background-color: var(--alta);
 }
