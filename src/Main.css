@@ -7,68 +7,66 @@ body {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-}
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-.App-header {
 	background-color: #282c34;
+	background-color: #0e0e0e;
+}
+section#passtrong {
 	min-height: 100vh;
 	font-size: calc(10px + 2vmin);
 	color: white;
-	display: flex;
-	align-content: center;
-	justify-content: center;
-	align-items: center;
-}
-.App-header section {
 	border: 1px solid #010508;
-	padding: 80px;
+	padding: 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-}
-section {
-	/* overflow: hidden; */
 	position: relative;
+	margin-top: 60px;
+	background-color: #24232b;
 }
-.restricciones ,
-.restricciones > div {
+section#passtrong header {
+	width: 100%;
+	display: flex;
+}
+section#passtrong header > img {
+	width: 50%;
+	margin: 0 auto;
+}
+section#passtrong .restricciones ,
+section#passtrong .restricciones > div {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-.restricciones > .requisitos > label {
+section#passtrong .restricciones > .requisitos > label {
 	cursor: pointer;
 }
-.restricciones > .requisitos > label[for="range"] > span {
+section#passtrong .restricciones > .requisitos > label[for="range"] > span {
 	font-size: .8em;
 }
-section .passwordGenerada {
+section#passtrong .passwordGenerada {
 	margin-bottom: 20px;
 	display: flex;
 }
-section .passwordGenerada input.password {
+section#passtrong .passwordGenerada input.password {
 	height: 40px;
 	padding: 6px 10px;
 	background-color: white;
 }
-section .passwordGenerada input.eloculto {
+section#passtrong .passwordGenerada input.eloculto {
 	position: absolute;
 	left: -9999px;
 }
-section .passwordGenerada button {
+section#passtrong .passwordGenerada button {
 	background: none;
 	border: none;
 	position: relative;
 }
-section .passwordGenerada button img {
+section#passtrong .passwordGenerada button img {
 	width: 30px;
 	margin-left: 10px;
 	cursor: pointer;
 }
-section .passwordGenerada button .tooltip {
+section#passtrong .passwordGenerada button .tooltip {
 	background: var(--negro);
 	color: white;
 	position: absolute;
@@ -78,7 +76,7 @@ section .passwordGenerada button .tooltip {
 	padding: 10px;
 	border-radius: 6px;
 }
-section .passwordGenerada button .tooltip .triangulo {
+section#passtrong .passwordGenerada button .tooltip .triangulo {
 	width: 0px;
 	height: 0px;
 	border-top: 10px solid transparent;
@@ -89,19 +87,19 @@ section .passwordGenerada button .tooltip .triangulo {
 	left: -10px;
 	top: 8px;
 }
-section .passwordGenerada button .tooltip.copiar {
+section#passtrong .passwordGenerada button .tooltip.copiar {
 	display: none;
 	width: 100px;
 }
-section .passwordGenerada button:hover .tooltip.copiar {
+section#passtrong .passwordGenerada button:hover .tooltip.copiar {
 	display: block;
 }
-section .passwordGenerada button .tooltip.copiado {
+section#passtrong .passwordGenerada button .tooltip.copiado {
 	display: none;
 	background-color: var(--aprobado);
 	width: 70px;
 	right: -100px;
 }
-section .passwordGenerada button .tooltip.copiado .triangulo {
+section#passtrong .passwordGenerada button .tooltip.copiado .triangulo {
 	border-right: 10px solid var(--aprobado);
 }

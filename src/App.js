@@ -7,6 +7,7 @@ import {
 } from "./Helpers/Helpers";
 
 import Button from "./Components/Button/Button";
+import logo from "./assets/svg/logo.svg";
 import copiar from "./assets/svg/copiar.svg";
 import "./Main.css";
 
@@ -24,47 +25,46 @@ function App() {
 	const [clavegenerada, setclavegenerada] = useState();
 
 	return (
-		<div className="App">
-			<header className="App-header">
-				<section>
-					<div className="passwordGenerada">
-						<input className="password" type="text" placeholder="Password" defaultValue={clavegenerada} disabled />
-						<input className="eloculto" type="text" placeholder="Password" defaultValue={clavegenerada} />
-						<button type="button" onClick={copiarPortapapeles}>
-							<img src={copiar} alt="copiar en el portapapeles" />
-							<Tooltip clase="copiar" mensaje="Click para copiar" />
-							<Tooltip clase="copiado" mensaje="Copiado !" />
-						</button>
-					</div>
-					<div className="restricciones">
-						<label htmlFor="range">
-							Rango
-							{ rangoMaximo ? <span>({rangoMaximo})</span> : <span>(0)</span> }
-							<input id="range" className="range" type="range" max="20" defaultValue="16" onChange={() => { setRangoMaximo(rango); }} />
-						</label>
-						<div className="requisitos">
-							<label htmlFor="numeros">
-								Numeros
-								<input id="numeros" className="numeros" type="checkbox" />
-							</label>
-							<label htmlFor="minusculas">
-								Minusculas
-								<input id="minusculas" className="minusculas" type="checkbox" />
-							</label>
-							<label htmlFor="mayusculas">
-								Mayusculas
-								<input id="mayusculas" className="mayusculas" type="checkbox" />
-							</label>
-							<label htmlFor="simbolos">
-								Simbolos
-								<input id="simbolos" className="simbolos" type="checkbox" />
-							</label>
-						</div>
-					</div>
-					<Button texto="Generar" onClick={() => { setclavegenerada(verificarRestricciones); }} isotipo />
-				</section>
+		<section id="passtrong">
+			<header>
+				<img src={logo} alt="PASStrong" />
 			</header>
-		</div>
+			<div className="passwordGenerada">
+				<input className="password" type="text" placeholder="Password" defaultValue={clavegenerada} disabled />
+				<input className="eloculto" type="text" placeholder="Password" defaultValue={clavegenerada} />
+				<button type="button" onClick={copiarPortapapeles}>
+					<img src={copiar} alt="copiar en el portapapeles" />
+					<Tooltip clase="copiar" mensaje="Click para copiar" />
+					<Tooltip clase="copiado" mensaje="Copiado !" />
+				</button>
+			</div>
+			<div className="restricciones">
+				<label htmlFor="range">
+					Rango
+					{ rangoMaximo ? <span>({rangoMaximo})</span> : <span>(0)</span> }
+					<input id="range" className="range" type="range" max="20" defaultValue="16" onChange={() => { setRangoMaximo(rango); }} />
+				</label>
+				<div className="requisitos">
+					<label htmlFor="numeros">
+						Numeros
+						<input id="numeros" className="numeros" type="checkbox" />
+					</label>
+					<label htmlFor="minusculas">
+						Minusculas
+						<input id="minusculas" className="minusculas" type="checkbox" />
+					</label>
+					<label htmlFor="mayusculas">
+						Mayusculas
+						<input id="mayusculas" className="mayusculas" type="checkbox" />
+					</label>
+					<label htmlFor="simbolos">
+						Simbolos
+						<input id="simbolos" className="simbolos" type="checkbox" />
+					</label>
+				</div>
+			</div>
+			<Button texto="Generar" onClick={() => { setclavegenerada(verificarRestricciones); }} isotipo />
+		</section>
 	);
 }
 
