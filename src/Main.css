@@ -315,123 +315,12 @@ section#passtrong > aside .complejidad > div.simbologia[data-complejidad=nivel4]
 	border: 2px solid var(--alta);
 	background-color: var(--alta);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 section#passtrong > aside .generar {
 	padding-bottom: 20px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-section#passtrong .restricciones ,
-section#passtrong .restricciones > div {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-section#passtrong .restricciones > .requisitos > label {
-	cursor: pointer;
-}
-section#passtrong .restricciones > .requisitos > label[for="range"] > span {
-	font-size: .8em;
-}
-*/
-
 @media ( max-width: 500px ) {
 	section#passtrong {
 		width: 90%;
+		margin-top: 20px;
 	}
 }
