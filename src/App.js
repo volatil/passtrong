@@ -57,18 +57,22 @@ function App() {
 					<div className="requisitos">
 						<label htmlFor="numeros">
 							<input id="numeros" className="numeros" type="checkbox" />
+							<span className="checkmark" />
 							Numeros
 						</label>
 						<label htmlFor="minusculas">
 							<input id="minusculas" className="minusculas" type="checkbox" />
+							<span className="checkmark" />
 							Minusculas
 						</label>
 						<label htmlFor="mayusculas">
 							<input id="mayusculas" className="mayusculas" type="checkbox" />
+							<span className="checkmark" />
 							Mayusculas
 						</label>
 						<label htmlFor="simbolos">
 							<input id="simbolos" className="simbolos" type="checkbox" />
+							<span className="checkmark" />
 							Simbolos
 						</label>
 					</div>

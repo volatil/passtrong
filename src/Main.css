@@ -153,6 +153,7 @@ section#passtrong > aside .restricciones .rango > label input[type="range"] {
 	background-image: linear-gradient(#25ebcd, #25ebcd);
 	background-size: 70% 100%;
 	background-repeat: no-repeat;
+	cursor: pointer;
 }
 section#passtrong > aside .restricciones .rango > label input[type="range"]::-webkit-slider-thumb {
 	-webkit-appearance: none;
@@ -220,8 +221,136 @@ section#passtrong > aside .restricciones .requisitos {
 	flex-direction: column;
 	width: 100%;
 }
-section#passtrong > aside .restricciones .requisitos > label {
+section#passtrong > aside .restricciones .requisitos label {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 22px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
+section#passtrong > aside .restricciones .requisitos label input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+section#passtrong > aside .restricciones .requisitos label .checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 21px;
+	width: 21px;
+	border: 3px solid white;
+}
+section#passtrong > aside .restricciones .requisitos label:hover input ~ .checkmark {
+	background-color: cyan;
+	border: 3px solid var(--cyan);
+}
+section#passtrong > aside .restricciones .requisitos label input:checked ~ .checkmark {
+	background-color: var(--cyan);
+	border: 3px solid var(--cyan);
+}
+section#passtrong > aside .restricciones .requisitos label .checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+section#passtrong > aside .restricciones .requisitos label input:checked ~ .checkmark:after {
+	display: block;
+}
+section#passtrong > aside .restricciones .requisitos label .checkmark:after {
+	 top: 2px;
+	left: 1px;
+	width: 20px;
+	height: 19px;
+	background-image: url("./assets/svg/check.svg");
+	background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 section#passtrong .restricciones ,
 section#passtrong .restricciones > div {
