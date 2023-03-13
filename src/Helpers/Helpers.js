@@ -63,3 +63,45 @@ export function rangoUI() {
 	const resul2 = parseInt( resul, 10);
 	$("section#passtrong > aside .restricciones .rango > label input[type=range]").css("background-size", `${resul2}% 100%`);
 }
+
+export function complejidad() {
+	const cantidadChecked = Number( $("input[type=checkbox]:checked").length );
+
+	/*
+	$(".simbologia > span").removeClass("activo");
+	if ( cantidadChecked === 1 ) {
+		$(".simbologia").attr("data-complejidad", "baja");
+		$(".simbologia > span").slice(0, cantidadChecked).addClass("activo");
+	} else if ( cantidadChecked === 2 ) {
+		$(".simbologia").attr("data-complejidad", "mediabaja");
+		$(".simbologia > span").slice(0, cantidadChecked).addClass("activo");
+	} else if ( cantidadChecked === 3 ) {
+		$(".simbologia").attr("data-complejidad", "mediaalta");
+		$(".simbologia > span").slice(0, cantidadChecked).addClass("activo");
+	} else if ( cantidadChecked === 4 ) {
+		$(".simbologia").attr("data-complejidad", "alta");
+		$(".simbologia > span").slice(0, cantidadChecked).addClass("activo");
+	} else {
+		$(".simbologia").attr("data-complejidad", "vacio");
+		$(".simbologia > span").slice(0, 0).addClass("activo");
+	}
+	*/
+
+	$(".simbologia > span").removeClass("activo");
+	if ( cantidadChecked === 1 ) {
+		$(".simbologia").attr("data-complejidad", "baja");
+		$(".simbologia > span").slice(0, cantidadChecked).addClass("activo");
+	} else if ( cantidadChecked === 2 ) {
+		$(".simbologia").attr("data-complejidad", "mediabaja");
+		$(".simbologia > span").slice(0, cantidadChecked).addClass("activo");
+	} else if ( cantidadChecked === 3 ) {
+		$(".simbologia").attr("data-complejidad", "mediaalta");
+		$(".simbologia > span").slice(0, cantidadChecked).addClass("activo");
+	} else if ( cantidadChecked === 4 ) {
+		$(".simbologia").attr("data-complejidad", "alta");
+		$(".simbologia > span").slice(0, cantidadChecked).addClass("activo");
+	} else {
+		$(".simbologia").attr("data-complejidad", "vacio");
+		$(".simbologia > span").slice(0, 0).addClass("activo");
+	}
+}

@@ -4,8 +4,12 @@
 	--gris: #24232b;
 	--cyan: #25ebcd;
 	--cyanHover: #17c6ac;
-	--amarillo: #f8ce60;
 	--tooltip: #333;
+	
+	--baja: #cc153f;
+	--mediabaja: #cc6615;
+	--mediaalta: #f8ce60;
+	--alta: #299a06;
 }
 body {
 	margin: 0;
@@ -228,7 +232,7 @@ section#passtrong > aside .restricciones .requisitos label {
 	display: block;
 	position: relative;
 	padding-left: 35px;
-	margin-bottom: 12px;
+	margin-bottom: 20px;
 	cursor: pointer;
 	font-size: 22px;
 	-webkit-user-select: none;
@@ -273,6 +277,60 @@ section#passtrong > aside .restricciones .requisitos label .checkmark:after {
 	background-image: url("./assets/svg/check.svg");
 	background-repeat: no-repeat;
 }
+
+
+
+section#passtrong > aside .complejidad {
+	display: flex;
+	justify-content: space-between;
+}
+section#passtrong > aside .complejidad > div > p {
+	text-transform: uppercase;
+	color: #ccc;
+	font-size: .7em;
+	letter-spacing: 0.05em;
+}
+section#passtrong > aside .complejidad > div.simbologia {
+	display: flex;
+}
+section#passtrong > aside .complejidad > div.simbologia > span {
+	border: 2px solid white;
+	height: 40px;
+	width: 6px;
+	margin: 0 4px 0 0;
+}
+section#passtrong > aside .complejidad > div.simbologia[data-complejidad=baja] > span.activo {
+	border: 2px solid var(--baja);
+	background-color: var(--baja);
+}
+section#passtrong > aside .complejidad > div.simbologia[data-complejidad=mediabaja] > span.activo {
+	border: 2px solid var(--mediabaja);
+	background-color: var(--mediabaja);
+}
+section#passtrong > aside .complejidad > div.simbologia[data-complejidad=mediaalta] > span.activo {
+	border: 2px solid var(--mediaalta);
+	background-color: var(--mediaalta);
+}
+section#passtrong > aside .complejidad > div.simbologia[data-complejidad=alta] > span.activo {
+	border: 2px solid var(--alta);
+	background-color: var(--alta);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 section#passtrong > aside .generar {
 	padding-bottom: 20px;
 }

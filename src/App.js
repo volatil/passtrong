@@ -5,6 +5,7 @@ import {
 	verificarRestricciones,
 	copiarPortapapeles,
 	rangoUI,
+	complejidad,
 } from "./Helpers/Helpers";
 
 import Button from "./Components/Button/Button";
@@ -56,25 +57,36 @@ function App() {
 					</div>
 					<div className="requisitos">
 						<label htmlFor="numeros">
-							<input id="numeros" className="numeros" type="checkbox" />
+							<input id="numeros" className="numeros" type="checkbox" onChange={() => { complejidad(); }} />
 							<span className="checkmark" />
 							Numeros
 						</label>
 						<label htmlFor="minusculas">
-							<input id="minusculas" className="minusculas" type="checkbox" />
+							<input id="minusculas" className="minusculas" type="checkbox" onChange={() => { complejidad(); }} />
 							<span className="checkmark" />
 							Minusculas
 						</label>
 						<label htmlFor="mayusculas">
-							<input id="mayusculas" className="mayusculas" type="checkbox" />
+							<input id="mayusculas" className="mayusculas" type="checkbox" onChange={() => { complejidad(); }} />
 							<span className="checkmark" />
 							Mayusculas
 						</label>
 						<label htmlFor="simbolos">
-							<input id="simbolos" className="simbolos" type="checkbox" />
+							<input id="simbolos" className="simbolos" type="checkbox" onChange={() => { complejidad(); }} />
 							<span className="checkmark" />
 							Simbolos
 						</label>
+					</div>
+				</div>
+				<div className="bloque complejidad">
+					<div>
+						<p>complejidad</p>
+					</div>
+					<div data-complejidad="vacio" className="simbologia">
+						<span />
+						<span />
+						<span />
+						<span />
 					</div>
 				</div>
 				<div className="bloque generar">
