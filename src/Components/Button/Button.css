@@ -2,17 +2,16 @@
 
 .Buttonjs {
 	margin-top: 40px;
-	color: white;
-	height: 40px;
+	color: var(--negro);
+	height: 60px;
+	width: 100%;
 	cursor: pointer;
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
-	width: 260px;
+	justify-content: space-around;
 	align-items: center;
-	border: 2px solid #c31630;
-	border-radius: 10rem;
-	background-color: #ed2c49;
+	border: none;
+	background-color: var(--cyan);
 	font-family: Barlow, sans-serif;
 	font-style: italic;
 	font-weight: 700;
@@ -24,15 +23,16 @@
 	transition:         all 0.2s ease-out;
 }
 .Buttonjs:hover {
-	background: #c31630;
+	background: var(--cyanHover);
 }
-.Buttonjs:hover > p {
-	margin: 0 10px;
+.Buttonjs:hover > img {
+	margin: 0 0 0 10px;
 }
 .Buttonjs > * {
 	margin: 0 7px;
 }
 .Buttonjs > p {
+	font-size: 1.5em;
 	text-transform: uppercase;
 	font-weight: 600;
 	letter-spacing: 0.05em;
@@ -45,4 +45,8 @@
 	width: 20px;
 	height: 20px;
 	display: block;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition:    all 0.2s ease-out;
+	-o-transition:      all 0.2s ease-out;
+	transition:         all 0.2s ease-out;
 }

@@ -3,6 +3,7 @@
 	--negro: #131218;
 	--gris: #24232b;
 	--cyan: #25ebcd;
+	--cyanHover: #17c6ac;
 	--amarillo: #f8ce60;
 	--tooltip: #333;
 }
@@ -43,12 +44,14 @@ section#passtrong > aside {
 }
 section#passtrong > aside .bloque {
 	background-color: var( --gris );
-	margin-bottom: 20px;
 	padding: 0px 10px;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+}
+section#passtrong > aside .passwordGenerada {
+	margin-bottom: 20px;
 }
 section#passtrong > aside .passwordGenerada input.password {
 	height: 40px;
@@ -270,6 +273,9 @@ section#passtrong > aside .restricciones .requisitos label .checkmark:after {
 	background-image: url("./assets/svg/check.svg");
 	background-repeat: no-repeat;
 }
+section#passtrong > aside .generar {
+	padding-bottom: 20px;
+}
 
 
 
@@ -365,3 +371,9 @@ section#passtrong .restricciones > .requisitos > label[for="range"] > span {
 	font-size: .8em;
 }
 */
+
+@media ( max-width: 500px ) {
+	section#passtrong {
+		width: 90%;
+	}
+}

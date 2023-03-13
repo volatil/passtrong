@@ -77,7 +77,9 @@ function App() {
 						</label>
 					</div>
 				</div>
-				<Button texto="Generar Contraseña" onClick={() => { setclavegenerada(verificarRestricciones); }} isotipo />
+				<div className="bloque generar">
+					<Button texto="Generar Contraseña" onClick={() => { setclavegenerada(verificarRestricciones); }} isotipo />
+				</div>
 			</aside>
 		</section>
 	);
