@@ -204,6 +204,9 @@ section#passtrong > aside .restricciones .requisitos label {
 	-ms-user-select: none;
 	user-select: none;
 }
+section#passtrong > aside .restricciones .requisitos label:hover {
+	opacity: .8;
+}
 section#passtrong > aside .restricciones .requisitos label input {
 	position: absolute;
 	opacity: 0;
@@ -218,8 +221,8 @@ section#passtrong > aside .restricciones .requisitos label .checkmark {
 	border: 3px solid white;
 }
 section#passtrong > aside .restricciones .requisitos label:hover input ~ .checkmark {
-	background-color: cyan;
-	border: 3px solid var(--cyan);
+	/* background-color: cyan; */
+	/* border: 3px solid var(--cyan); */
 }
 section#passtrong > aside .restricciones .requisitos label input:checked ~ .checkmark {
 	background-color: var(--cyan);
@@ -233,7 +236,7 @@ section#passtrong > aside .restricciones .requisitos label .checkmark:after {
 section#passtrong > aside .restricciones .requisitos label input:checked ~ .checkmark:after {
 	display: block;
 }
-section#passtrong > aside .restricciones .requisitos label:hover input ~ .checkmark ,
+/* section#passtrong > aside .restricciones .requisitos label:hover input ~ .checkmark , */
 section#passtrong > aside .restricciones .requisitos label .checkmark:after {
 	top: 2px;
 	left: 1px;
