@@ -1,4 +1,6 @@
 ### PASSTRONG
-URL Deploy: [Link](https://volatil.cl/passtrong/)
+## 👾 URL Deploy
+[Link](https://volatil.cl/passtrong/)
 
-Local run: `npm start`
+## 👾 Local Run
+`npm start`
