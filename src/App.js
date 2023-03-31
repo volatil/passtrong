@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import {
 	rango,
 	verificarRestricciones,
+	validandoloscheckbox,
 	copiarPortapapeles,
 	rangoUI,
 	complejidad,
@@ -10,6 +11,7 @@ import {
 
 import Alerta from "./Components/Alerta/Alerta";
 import Button from "./Components/Button/Button";
+import ErrorAlGenerar from "./Components/ErrorAlGenerar/ErrorAlGenerar";
 
 import logo from "./assets/svg/logo.svg";
 import copiar from "./assets/svg/copiar.svg";
@@ -18,6 +20,7 @@ import "./Main.css";
 function App() {
 	const [rangoMaximo, setRangoMaximo] = useState(16);
 	const [clavegenerada, setclavegenerada] = useState();
+	const [valido, setvalido] = useState();
 
 	useEffect(() => {
 		rangoUI();
@@ -82,8 +85,9 @@ function App() {
 					</div>
 				</div>
 				<div className="bloque generar">
-					<Button texto="Generar Contraseña" onClick={() => { setclavegenerada(verificarRestricciones); }} isotipo />
+					<Button texto="Generar Contraseña" onClick={() => { setclavegenerada(verificarRestricciones); setvalido(validandoloscheckbox); }} isotipo />
 				</div>
+				{ valido && <ErrorAlGenerar /> }
 			</aside>
 		</section>
 	);

@@ -71,3 +71,8 @@ export function complejidad() {
 	$(".simbologia > span").removeClass("activo");
 	$(".simbologia > span").slice(0, cantidadChecked).addClass("activo");
 }
+
+export function validandoloscheckbox() {
+	const hayChecked = $("section#passtrong > aside .restricciones .requisitos label input[type=checkbox]").is(":checked");
+	return !hayChecked;
+}
